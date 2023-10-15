@@ -1,0 +1,4 @@
+# The following files and directories shall be ignored
+.vscode
+openfiber/
+vodafone/

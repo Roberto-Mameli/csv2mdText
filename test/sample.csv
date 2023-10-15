@@ -1,0 +1,25 @@
+
+# This is a comment
+   	
+This line should be skipped
+Field 1; Field 2;Field  3; Field 4;Field 5
+Field 6; Field 7;Field 8; Field 9;Field  10;
+
+Field 11;" Field 12 -
+2 distinct rows";Field 13; Field 14;Field 15
+Field 16;" Field 17 -
+3 distinct
+  rows";Field 18; Field 19;Field 20;
+
+"Field 21
+on two distint rows";Field 22;"Field 23 with separator
+inside (;)";Field 24; Field 25
+
+Field 26;"Field 27 in single row";"Field 28 with single row and separator (;)";Field 29;"Field 30
+on the last column in two rows"
+Field 31;Field 32 in single row;"Field 33 with 2 rows
+and separator (;)";Field 34;"Field 35 on the last column in one row";
+Field 36;Field ""37"" with quotes within the field;"Field 38 on
+2 rows";Field 39;Field 40
+Field 41;"Field ""42"" with quotes within the field";"Field 43 on
+2 rows";Field 44;Field 45
