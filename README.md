@@ -2,6 +2,7 @@
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 
 - [Disclaimer](#disclaimer)
+- [Introduction](#introduction)
 - [Installation of *csv2mdText* Tool](#installation-of-csv2mdtext-tool)
 - [Usage of *csv2mdText* Tool](#usage-of-csv2mdtext-tool)
   - [First Command Layout](#first-command-layout)
@@ -16,6 +17,12 @@ This software is licensed under the terms of the Apache License, Version 2.0 (th
 > [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0)
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+# Introduction
+This tool can be used to produce a document in markdown format, by extracting information from a table available in CSV format and organizing it according to a given template.
+
+It can be very useful to automate document production in all cases where the document structure is repetitive and the information are available in tabular format (e.g. description of a set of products or similar). 
+
 
 # Installation of *csv2mdText* Tool
 The tool can be either downloaded or cloned from the following [git repository](https://github.com/Roberto-Mameli/csv2mdText) onto the local machine.
