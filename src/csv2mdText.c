@@ -437,6 +437,7 @@ static void appendCsvRow2Output (FILE *outputMdFd, char *inputMdTemplate, char p
     /* corresponding fields                                   */
     while ( fgets(currentLine,MAXLINELEN,inputMdTemplateFd) )
     {
+        currentLine[strcspn(currentLine, "\r\n")] = '\0';   /* Remove trailing CR, LF, CRLF, LFCR, etc.    */
         p = currentLine;
         while ( (q=strchr(p,placeHolder))!=NULL )
         {

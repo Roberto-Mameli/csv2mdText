@@ -18,10 +18,13 @@ This software is licensed under the terms of the Apache License, Version 2.0 (th
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
-# Introduction
-This tool can be used to produce a document in markdown format, by extracting information from a table available in CSV format and organizing it according to a given template.
 
-It can be very useful to automate document production in all cases where the document structure is repetitive and the information are available in tabular format (e.g. description of a set of products or similar). 
+# Introduction
+*csv2mdText* is a Command Line Tool available on Linux that can be used to produce a document in markdown format, by extracting information from a table available in CSV format and organizing it according to a given template.
+
+It can be very useful to automate document production in all cases where the document structure is repetitive and the information are available in tabular format (e.g. description of a set of products or similar).
+
+The markdown document obtained by the tool can easily be converted in other formats (e.g. docx or pdf) by using available online services or other Linux tools (e.g. [pandoc](https://pandoc.org/)).
 
 
 # Installation of *csv2mdText* Tool
@@ -108,6 +111,7 @@ we get the list of the input file columns along with the associated column numbe
 This layout simply displays a detailed help on the command:
 
 > csv2mdText -h
+
 
 # Examples
 As an example consider the following command:

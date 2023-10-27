@@ -1,8 +1,85 @@
-This directory contains the following files:
-    - a couple of templates for building the output markdown file (files Template_*.md)
-    - an example csv input file (Sample1.csv)
-    - reference.docx which specifies formats to be used by pandoc to convert from .md to .docx
+# Introduction
+The *examples* subdirectory contains several sample files. They are explained in details below.
 
+In the following we assume that *csv2mdText* has been compiled and installed according to instructions in [README](../README.md) and that the current directory is *csv2mdText/examples*.
+
+# Examples Description
+## (1) *sample_1.csv*
+This file contains a list of DVDs with related information organized into a csv file. The first row in the file contains the name of the corresponding columns, which can be printed by issuing the following command:
+
+> $ csv2mdText -d sample_1.csv
+> 
+> Field 1:        Movie Id
+>
+> Field 2:        Movie Name
+>
+> Field 3:        Support
+>
+> Field 4:        Unit Price
+>
+> Field 5:        Minimum Qty
+>
+> Field 6:        Movie Short Description
+>
+> Field 7:        Cast
+
+The template file is *sample_1_template.md*, which is structured as follows:
+
+> $ cat sample_1_template.md
+> 
+> \## $2
+> 
+> \### Description
+> $6
+> 
+> \### Cast
+> $7
+> 
+> \### Purchase Details
+> 
+> | Code | Support | Unit Price | Min Qty |
+> 
+> |:----|:----|:----|:----|
+>
+> | $1 | $3 | $4 | $5 |
+
+
+The correspondence among placeholders in the markdown template (i.e. *$n* strings) and actual values extracted from rows of the input csv files is as follows:
+
+> $1 is substituted by:        Movie Id
+>
+> $2 is substituted by:        Movie Name
+>
+> $3 is substituted by:        Support
+>
+> $4 is substituted by:        Unit Price
+>
+> $5 is substituted by:        Minimum Qty
+>
+> $6 is substituted by:        Movie Short Description
+>
+> $7 is substituted by:        Cast
+> 
+
+The markdown output (sample_1.md) is obtained by issuing the following command:
+
+> csv2mdText -i sample_1.csv -o sample_1.md -t sample_1_template.md
+
+The output appears as follows:
+
+![sample_1_md.png](images/sample_1_md.png)
+
+By using [pandoc](https://pandoc.org/) or some online converters the output can be converted into other formats (e.g. *.docx*):
+
+![sample_1_docx.png](images/sample_1_docx.png)
+
+
+## (2) *sample_2.csv*
+TBD
+
+
+
+*Some preliminary notes below*
 The document can be produced as follows. First, the markdown file shall be generated from the input csv file:
 
     csv2mdText  -n -i ./Sample1.csv -o Sample1.md -t Template_TC.md -c Template_Chapter.md
