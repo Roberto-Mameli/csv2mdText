@@ -9,6 +9,10 @@
   - [Second Command Layout](#second-command-layout)
   - [Third Command Layout](#third-command-layout)
 - [Examples](#examples)
+- [Useful Hints](#useful-hints)
+  - [Comments in the input file](#comments-in-the-input-file)
+  - [First line processed by the tool](#first-line-processed-by-the-tool)
+  - [Input file encoding](#input-file-encoding)
 
 
 # Disclaimer
@@ -97,10 +101,10 @@ The following optional parameters are also accepted (most of them have been alre
 - *option -s*: is used to specify a different separator for the csv file other than the semicolon. The character specified with this option shall be enclosed by quotes (e.g. *-s "|"* for defining the pipe sign as separator)
 - *option -p*: used to specify a placeholder for the template file different from the default dollar sign (*"$"*). The character specified with this option shall be enclosed by quotes (e.g. *-s "%"* for using the percentage for placeholders)
 - *option -r*: optional argument that allows to specify a character other than the hash for comments in the CSV file. The character specified here shall be enclosed by quotes (e.g. *-r "!"* for using the exclamation mark for comments).
-- *option -c*: this option allows to define an optional markdown template for defining highest level chapter templates. This is better explained in the comments.
+- *option -c*: this option allows to define an optional markdown template for defining highest level chapter templates. This is better explained in the [./examples](./examples/README.md) directory.
 
 ## Second Command Layout
-This layout is useful when the CSV Input file contains a first row with column names. In this case, issuing the fiollowing command:
+This layout is useful when the CSV Input file contains a first row with column names. In this case, issuing the following command:
 
 > csv2mdText -d <csv_input_file>
 
@@ -125,4 +129,41 @@ is lost) and the first valid line of the csv input file is considered an header 
 
 This command is very similar to the previous one, with some notable differences. Specifically, the first valid line of the csv input file is considered valid and used as all the others (option *-n*), comments within the input file are identified by the exclamation mark (not by hash), and placeholders in the template are represented by *"&"* and not by the dollar sign (*"$"*).
 
-The *examples* subdirectory contains further sample files. Look at the [README](./examples/README.md) file inside the directory for detailed explanation.
+The *examples* subdirectory contains some sample files. Look at the [README](./examples/README.md) file inside the directory for detailed explanation.
+
+# Useful Hints
+## Comments in the input file
+The input CSV file might contain some comments. By default, *csv2mdText* consider the hash (*\#*) as beginning of a comment. It might happen that the input file uses a different character to denote comments. In that case, option *-r* can be used to instruct *csv2mdText* to recognize the proper character as beginning of a comment.
+
+## First line processed by the tool
+Remember that lines with comments and empty lines (i.e. lines containing only spaces, tabs and new lines) are skipped by the tool. Consider e.g. the following input CSV file:
+
+![Example file with hash on the first line](./examples/images/header_with_hash.png)
+
+In this example, the first line of the CSV file contains the list of column names, but it starts with an hash. In this situation, *csv2mdText* skips it and start processing from the following line.
+
+Observe also that, by default, the tool assumes that the first line is an header, and do not include its contents in the output file. In other words, in this scenario the output markdown file starts with the subsequent line (i.e. line 3 of the input CSV, i.e. the one starting with *DVD0002*).
+
+To change this behaviour, option *-n* (standing for *no header*) is available. It instructs the tool to include the first valid line in the output document, without excluding it. In this case, applying option *-n*, the output begins correctly with line 2 of the input CSV (i.e. with *DVD0001*).
+
+## Input file encoding
+*csv2mdText* is able to handle input CSV files encoded according to different standards. In most cases it processes the file without encountering any problem and produces an output markdown file coded as the input CSV.
+
+However, in some cases it might happen that the output markdown produced by the tool cannot be converted by pandoc or other online tools. For example, pandoc accept only input files encoded in UTF-8 format.
+
+This could be not the case if the CSV is obtained e.g from Excel and the cells contains not strictly ASCII characters. If this is the case, the format can be converted by the following commands:
+
+> \# this checks the original format, e.g. text/plain; charset=iso-8859-1
+>
+> file -bi Sample.csv
+>
+> \# this performs conversion, -f specifies the format found above
+> 
+> iconv -f iso-8859-1 -t utf-8 -o Sample_UTF-8.csv Sample.csv
+> 
+> \# to check the correct format
+> 
+> file -bi Sample_UTF-8.csv
+
+    
+Once the input has been converted, *csv2mdText* can be used by specifying in input the converted file obtained above.

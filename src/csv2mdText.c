@@ -44,7 +44,7 @@
  * Definitions *
  ***************/
 #define MAXFILENAMELEN   256    /* Maximum length for file names                             */
-#define MAXLINELEN      1024    /* Maximum length for a single line of the CSV input file    */
+#define MAXLINELEN      2048    /* Maximum length for a single line of the CSV input file    */
 #define MAXFIELDLEN     8192    /* Maximum length for a single field                         */
 #define MAXFIELDS         64    /* Maximum number of fields                                  */
 

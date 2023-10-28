@@ -1,0 +1,11 @@
+Movie Id;Movie Name;Category;Support;Unit Price;Minimum Qty;Movie Short Description;Cast
+DVD0001;The Godfather;Classic;DVD;15.99 euros;1;American epic crime film directed by Francis Ford Coppola.;The film stars Marlon Brando, Al Pacino, James Caan, Richard Castellano, Robert Duvall, Sterling Hayden, John Marley, Richard Conte and Diane Keaton.
+DVD0002;City Lights;Classic;DVD;10.99 euros;1;City Lights is a 1931 American silent romantic comedy-drama film written, produced, directed by, and starring Charlie Chaplin.;Charlie Chaplin, Virginia Cherrill, Florence Lee, Harry Myers and Al Ernest Garcia
+DVD0003;Casablanca;Classic;DVD;15.99 euros;1;1942 American romantic drama;Humphrey Bogart, Ingrid Bergman and Paul Henreid
+DVD0004;Singin' in the Rain;Classic;DVD;15.99 euros;1;Singin' in the Rain is a 1952 American musical romantic comedy;Gene Kelly, Donald O'Connor, and Debbie Reynolds 
+DVD0005;Vertigo;Hitchcock;DVD;15.99 euros;1;One of the most famous psychological thrillers directed and produced by Alfred Hitchcock;James Stewart and Kim Novak
+DVD0006;Notorious;Hitchcock;DVD;15.99 euros;1;A movie between spy and noir directed and produced by Alfred Hitchcock in 1946;Cary Grant, Ingrid Bergman and Claude Rains 
+DVD0007;2001: A Space Odyssey;Science Fiction;DVD;18.99 euros;1;An epic science fiction film produced and directed by Stanley Kubrick, based on the novel "The Sentinel" from Arthur C.Clarke; Keir Dullea, Gary Lockwood, William Sylvester and Douglas Rain
+DVD0008;Blade Runner;Science Fiction;DVD;15.99 euros;1;Science fiction film directed by Ridley Scott in 1982, based on Philip K. Dick's 1968 novel ""Do Androids Dream of Electric Sheep?"";Harrison Ford, Rutger Hauer, Sean Young and Edward James Olmos
+DVD0009;Avatar;Science Fiction;DVD;15.99 euros;1;Epic science fiction film directed, written, co-produced, and co-edited by James Cameron in 2009;Sam Worthington, Zoe Saldana, Stephen Lang, Michelle Rodriguez and Sigourney Weaver
+DVD0010;Finding Nemo;Animation;DVD;12.99 euros;1;Computer-animated comedy-drama adventure movie produced by Pixar Animation Studios for Walt Disney Pictures in 2003;Voices of Albert Brooks, Ellen DeGeneres, Alexander Gould, Willem Dafoe and Geoffrey Rush
